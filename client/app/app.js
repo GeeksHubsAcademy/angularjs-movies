@@ -2,11 +2,12 @@ import angular from 'angular';
 import ngRoute from 'angular-route';
 import Components from './components/components';
 import Services from './services';
+import Filters from './filters';
 import AppComponent from './app.component';
 import 'normalize.css';
 
 angular
-  .module('app', [ngRoute, Components, Services])
+  .module('app', [ngRoute, Components, Services,Filters])
   .config([
     '$routeProvider',
     $routeProvider => {
