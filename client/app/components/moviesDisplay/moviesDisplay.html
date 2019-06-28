@@ -1,0 +1,19 @@
+<div class="movies-display">
+    <!-- <pre>
+    {{ $ctrl.movies | json }}
+    </pre> -->
+
+    <a
+    style="background-image: url('{{$ctrl.imageBase + movie.backdrop_path}}')"
+    href="/movie/{{movie.id}}"
+    class="movie"
+    ng-repeat="movie in $ctrl.movies">
+
+        <h1>
+          {{movie.title}}
+        </h1>
+        <div>
+          {{movie.release_date | formatDate}}
+        </div>
+    </a>
+</div>

@@ -1,0 +1,35 @@
+.movies-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  // grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em;
+  .movie {
+    padding:1em;
+    font-size: 0.8em;
+    color: white;
+    text-decoration: none;
+    background-size: cover;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+
+    position: relative;
+    &::before {
+      content:'';
+      width:100%;
+      height: 100%;
+      position: absolute;
+      top:0;
+      right:0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    & > * {
+      position: relative;
+      z-index: 1;
+    }
+
+  }
+}

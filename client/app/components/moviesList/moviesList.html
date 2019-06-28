@@ -1,12 +1,5 @@
-<div>
+<div class="movies-list">
   <h1>{{ $ctrl.name }}</h1>
 
-  <div class="movies">
-
-    <pre>
-      {{$ctrl.movies | json}}
-    </pre>
-
-
-  </div>
+  <movies-display movies="$ctrl.movies"></movies-display>
 </div>
