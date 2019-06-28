@@ -1,10 +1,14 @@
 import angular from 'angular';
-import Home from './home/home';
-
+import movieDetail from './movieDetail/movieDetail';
+import moviesList from './moviesList/moviesList';
+import moviesSearch from './moviesSearch/moviesSearch';
+import navigation from './navigation/navigation';
 
 let componentModule = angular.module('app.components', [
-  Home,
-
+  movieDetail,
+  moviesList,
+  moviesSearch,
+  navigation,
 ]).name;
 
 export default componentModule;

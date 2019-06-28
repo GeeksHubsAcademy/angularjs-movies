@@ -1,12 +1,27 @@
 import angular from 'angular';
+import ngRoute from 'angular-route';
 import Components from './components/components';
 import AppComponent from './app.component';
 import 'normalize.css';
 
+angular
+  .module('app', [ngRoute, Components])
+  .config([
+    '$routeProvider',
+    $routeProvider => {
+      $routeProvider
+        .when('/movies/search', {
+          template: '<movies-search></movies-search>',
+        })
+        .when('/movies/:category?', {
+          template: '<movies-list></movies-list>',
+        })
+        .when('/movie/:id', {
+          template: '<movie-detail></movie-detail>',
+        })
 
-angular.module('app', [
-    Components,
+        .otherwise({ redirectTo: '/movies/top_rated' });
+    },
   ])
-  .config(()=>{})
-
+  .config(['$locationProvider', lp => lp.html5Mode(true)])
   .component('app', AppComponent);
