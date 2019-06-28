@@ -1,6 +1,5 @@
 class MoviesListController {
-  constructor(params, movieService, $location) {
-    console.log(params,  $location);
+  constructor(params, movieService, $window) {
     this.movies = [];
     const cat = params.category;
     this.name = `Movies ${cat.replace('_', ' ')}`;
@@ -12,13 +11,12 @@ class MoviesListController {
         this.movies = res.data.results;
       })
       .catch( (error) => {
-        // TODO: AVERIGUAR XQ NO VA $location
-        location.replace('/movies/top_rated');
-        // console.error(error);
+        // TODO: AVERIGUAR XQ NO VA $location.path o .replace
+         $window.location.href = '/movies/top_rated';
       });
   }
 }
 
-MoviesListController.$inject = ['$routeParams', 'movieService', '$location'];
+MoviesListController.$inject = ['$routeParams', 'movieService', '$window'];
 
 export default MoviesListController;
