@@ -5,7 +5,7 @@ import './moviesList.scss';
 let moviesListComponent = {
   bindings: {},
   template,
-  controller
+  controller //: ['$routeParams', controller],
 };
 
 export default moviesListComponent;
