@@ -2,4 +2,6 @@
   <h1>{{ $ctrl.name }}</h1>
 
   <movies-display movies="$ctrl.movies"></movies-display>
+  <!-- <button  ng-click="$ctrl.getMovies()">más pelis!!</button> -->
+  <span in-view="$inview && $ctrl.getMovies()"></span>
 </div>

@@ -4,10 +4,11 @@ import Components from './components/components';
 import Services from './services';
 import Filters from './filters';
 import AppComponent from './app.component';
+import angularInview from 'angular-inview';
 import 'normalize.css';
 
 angular
-  .module('app', [ngRoute, Components, Services,Filters])
+  .module('app', [ngRoute, Components, Services, Filters, angularInview])
   .config([
     '$routeProvider',
     $routeProvider => {

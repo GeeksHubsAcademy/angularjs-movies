@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "angular": "^1.5.0",
+    "angular-inview": "^3.1.0",
     "angular-route": "^1.7.8",
     "normalize.css": "^3.0.3"
   },

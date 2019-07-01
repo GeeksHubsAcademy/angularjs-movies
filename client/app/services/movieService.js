@@ -12,12 +12,12 @@ let module = angular
       constructor(http) {
         this.http = http;
       }
-      getCategory(category) {
+      getCategory(category, page = 1) {
         const validCategories = ['top_rated', 'popular', 'upcoming'];
 
         if (validCategories.includes(category)) {
           return this.http.get(
-            `${this.apiBaseUrl}movie/${category}?api_key=${this.apiKey}`,
+            `${this.apiBaseUrl}movie/${category}?api_key=${this.apiKey}&page=${page}`,
           );
         } else {
           return Promise.reject('no valid category');

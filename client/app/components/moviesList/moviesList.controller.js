@@ -1,19 +1,30 @@
 class MoviesListController {
   constructor(params, movieService, $window) {
+    this.movieService = movieService;
     this.movies = [];
-    const cat = params.category;
-    this.name = `Movies ${cat.replace('_', ' ')}`;
+    this.cat = params.category;
+    this.name = `Movies ${this.cat.replace('_', ' ')}`;
+    this.page = 1;
+    this.totalPages = 2;
+  }
 
-    movieService
-      .getCategory(cat)
-      .then(res => {
-        console.log(res);
-        this.movies = res.data.results;
-      })
-      .catch( (error) => {
-        // TODO: AVERIGUAR XQ NO VA $location.path o .replace
-         $window.location.href = '/movies/top_rated';
-      });
+
+  getMovies () {
+    if (this.totalPages >= this.page) {
+       this.movieService
+         .getCategory(this.cat, this.page)
+         .then(res => {
+           console.log(res);
+           this.movies = [...this.movies, ...res.data.results];
+           this.totalPages = res.data.total_pages;
+           this.page++;
+         })
+         .catch(error => {
+           // TODO: AVERIGUAR XQ NO VA $location.path o .replace
+           $window.location.href = '/movies/top_rated';
+         });
+    }
+
   }
 }
 
