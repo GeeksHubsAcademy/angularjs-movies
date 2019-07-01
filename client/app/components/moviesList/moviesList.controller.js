@@ -6,11 +6,13 @@ class MoviesListController {
     this.name = `Movies ${this.cat.replace('_', ' ')}`;
     this.page = 1;
     this.totalPages = 2;
+    this.loading = false;
   }
 
 
   getMovies () {
     if (this.totalPages >= this.page) {
+       this.loading = true;
        this.movieService
          .getCategory(this.cat, this.page)
          .then(res => {
@@ -22,7 +24,8 @@ class MoviesListController {
          .catch(error => {
            // TODO: AVERIGUAR XQ NO VA $location.path o .replace
            $window.location.href = '/movies/top_rated';
-         });
+         })
+         .finally(() => this.loading = false);
     }
 
   }

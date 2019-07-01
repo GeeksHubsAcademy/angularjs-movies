@@ -3,5 +3,10 @@
 
   <movies-display movies="$ctrl.movies"></movies-display>
   <!-- <button  ng-click="$ctrl.getMovies()">más pelis!!</button> -->
-  <span in-view="$inview && $ctrl.getMovies()"></span>
+
+
+  <div in-view="$inview && $ctrl.getMovies()">
+    <loading ng-show="$ctrl.loading"></loading>
+  </div>
+
 </div>

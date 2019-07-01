@@ -4,6 +4,8 @@ import moviesList from './moviesList/moviesList';
 import moviesSearch from './moviesSearch/moviesSearch';
 import navigation from './navigation/navigation';
 import moviesDisplay from './moviesDisplay/moviesDisplay';
+import loading from './loading/loading';
+
 
 let componentModule = angular.module('app.components', [
   movieDetail,
@@ -11,6 +13,7 @@ let componentModule = angular.module('app.components', [
   moviesSearch,
   moviesDisplay,
   navigation,
+  loading,
 ]).name;
 
 export default componentModule;
