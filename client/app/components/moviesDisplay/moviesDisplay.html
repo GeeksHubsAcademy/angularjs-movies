@@ -4,7 +4,7 @@
     </pre> -->
 
     <a
-    style="background-image: url('{{$ctrl.imageBase + movie.backdrop_path}}')"
+    style="background-image: url('{{movie.backdrop_path && $ctrl.imageBase + movie.backdrop_path}}')"
     href="/movie/{{movie.id}}"
     class="movie"
     ng-repeat="movie in $ctrl.movies">
