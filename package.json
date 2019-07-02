@@ -54,6 +54,7 @@
   },
   "scripts": {
     "build": "gulp webpack",
+    "postbuild":"rm -rf docs && mv dist docs && cp docs/index.html docs/404.html",
     "component": "gulp component",
     "serve": "gulp serve",
     "start": "gulp serve",
