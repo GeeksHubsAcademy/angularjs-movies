@@ -54,6 +54,8 @@
   },
   "scripts": {
     "build": "gulp webpack",
+    "postbuild":"echo '<base href=\"/angularjs-movies/\">' >>> dist/index.html",
+    "postpostbuild":"rm -rf docs && mv dist docs && cp docs/index.html docs/404.html",
     "component": "gulp component",
     "serve": "gulp serve",
     "start": "gulp serve",
