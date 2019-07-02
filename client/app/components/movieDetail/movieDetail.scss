@@ -1,3 +1,26 @@
-.movieDetail {
-  color: red;
+.movie-detail {
+
+  .movie-container {
+    padding: 2em;
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+
+
+    .data {
+      flex:2;
+      word-break: break-all;
+      min-width: 500px;
+      margin-right: 1em;
+
+    }
+    .poster {
+      flex:1;
+      min-width: 200px;
+
+      img {
+        width:100%;
+      }
+    }
+  }
 }

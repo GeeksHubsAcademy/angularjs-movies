@@ -1,3 +1,20 @@
-<div>
-  <h1>{{ $ctrl.name }}</h1>
+<div class="movie-detail">
+  <h1 ng-if="$ctrl.error">
+    {{ $ctrl.error }}
+  </h1>
+
+  <section class="movie-container" ng-if="!$ctrl.error">
+    <div class="data">
+      <span>
+
+        {{ $ctrl.movie }}
+      </span>
+    </div>
+    <div class="poster">
+      <img
+        ng-src="{{ $ctrl.imageBase + $ctrl.movie.poster_path }}"
+        alt="poster"
+      />
+    </div>
+  </section>
 </div>

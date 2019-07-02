@@ -17,13 +17,19 @@ let module = angular
 
         if (validCategories.includes(category)) {
           return this.http.get(
-            `${this.apiBaseUrl}movie/${category}?api_key=${this.apiKey}&page=${page}`,
+            `${this.apiBaseUrl}movie/${category}?api_key=${
+              this.apiKey
+            }&page=${page}`,
           );
         } else {
           return Promise.reject('no valid category');
         }
       }
-      getMovie(id) {}
+      getMovie(id) {
+        return this.http.get(
+          `${this.apiBaseUrl}movie/${id}?api_key=${this.apiKey}`,
+        );
+      }
       search(query) {}
     },
   ]).name;
